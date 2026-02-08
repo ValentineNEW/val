@@ -7,7 +7,7 @@ import {
   QuestionPage,
   CelebrationReveal,
   GiftBoxAnimation,
-} from './components';
+} from './';
 
 type Phase = 'landing' | 'form' | 'transition' | 'question' | 'celebration' | 'giftbox';
 
