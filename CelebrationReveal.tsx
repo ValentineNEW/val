@@ -10,7 +10,6 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
   const [confetti, setConfetti] = useState<{ id: number; left: number; delay: number; duration: number }[]>([]);
 
   useEffect(() => {
-    // Generate confetti
     const confettiElements = Array.from({ length: 50 }, (_, i) => ({
       id: i,
       left: Math.random() * 100,
@@ -36,7 +35,6 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-gradient-to-br from-pink-100 via-rose-100 to-red-100 relative overflow-hidden"
     >
-      {/* Animated Confetti Hearts */}
       {confetti.map((item) => (
         <motion.div
           key={item.id}
@@ -56,11 +54,10 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
             left: `${item.left}%`,
           }}
         >
-          <Heart className="w-6 h-6 text-pink-400 fill-pink-400 opacity-70" />
+          <Heart className="w-4 h-4 sm:w-6 sm:h-6 text-pink-400 fill-pink-400 opacity-70" />
         </motion.div>
       ))}
 
-      {/* Floating Hearts Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(15)].map((_, i) => (
           <motion.div
@@ -92,15 +89,13 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
         ))}
       </div>
 
-      {/* Main Content */}
-      <div className="relative z-10 min-h-screen flex items-center justify-center px-6">
+      <div className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6">
         <div className="max-w-3xl w-full text-center">
-          {/* Top Sparkle */}
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3, duration: 0.6, type: 'spring', stiffness: 200 }}
-            className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-pink-400 via-rose-400 to-red-400 rounded-full mb-8 shadow-2xl"
+            className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-pink-400 via-rose-400 to-red-400 rounded-full mb-6 sm:mb-8 shadow-2xl"
           >
             <motion.div
               animate={{
@@ -113,17 +108,16 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
                 ease: 'easeInOut',
               }}
             >
-              <Sparkles className="w-12 h-12 text-white" />
+              <Sparkles className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
             </motion.div>
           </motion.div>
 
-          {/* Main Message */}
-          <div className="mb-12">
+          <div className="mb-8 sm:mb-12">
             <motion.p
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.5, duration: 0.5, type: 'spring', stiffness: 150 }}
-              className="text-6xl mb-6"
+              className="text-5xl sm:text-6xl mb-4 sm:mb-6"
             >
               <motion.span
                 animate={{ y: [0, -10, 0] }}
@@ -138,7 +132,7 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-4"
             >
               Pookie here smiles
             </motion.h1>
@@ -147,39 +141,38 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.9, duration: 0.6 }}
-              className="text-2xl text-gray-700 mb-4"
+              className="text-xl sm:text-2xl text-gray-700 mb-3 sm:mb-4 px-4"
             >
               I have something to ask you...
             </motion.p>
           </div>
 
-          {/* The Question */}
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 1.1, duration: 0.6 }}
-            className="bg-white/90 backdrop-blur-md rounded-3xl shadow-2xl p-12 border-2 border-pink-200 mb-8"
+            className="bg-white/90 backdrop-blur-md rounded-2xl sm:rounded-3xl shadow-2xl p-6 sm:p-8 lg:p-12 border-2 border-pink-200 mb-6 sm:mb-8"
           >
-            <div className="flex items-center justify-center gap-3 mb-8">
+            <div className="flex items-center justify-center gap-2 sm:gap-3 mb-6 sm:mb-8">
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               >
-                <Heart className="w-10 h-10 text-rose-500 fill-rose-500" />
+                <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-rose-500 fill-rose-500" />
               </motion.div>
               
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
               >
-                <Heart className="w-14 h-14 text-rose-500 fill-rose-500" />
+                <Heart className="w-10 h-10 sm:w-14 sm:h-14 text-rose-500 fill-rose-500" />
               </motion.div>
               
               <motion.div
                 animate={{ scale: [1, 1.2, 1] }}
                 transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
               >
-                <Heart className="w-10 h-10 text-rose-500 fill-rose-500" />
+                <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-rose-500 fill-rose-500" />
               </motion.div>
             </div>
 
@@ -187,23 +180,22 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 1.3, duration: 0.6 }}
-              className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-red-500"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-rose-500 to-red-500 px-4"
             >
               Will you be my Valentine? 💌
             </motion.h2>
 
-            {/* Buttons */}
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 1.5, duration: 0.6 }}
-              className="flex gap-4 justify-center mt-10"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-6 sm:mt-10 px-4"
             >
               <motion.button
                 whileHover={{ scale: 1.1, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleYesClick}
-                className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-12 py-5 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition-all"
+                className="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-bold shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto"
               >
                 Yes 💖
               </motion.button>
@@ -212,19 +204,18 @@ export function CelebrationReveal({ onNext }: CelebrationRevealProps) {
                 whileHover={{ scale: 1.1, rotate: -2 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleYesSmileyClick}
-                className="bg-gradient-to-r from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500 text-white px-12 py-5 rounded-full text-xl font-bold shadow-xl hover:shadow-2xl transition-all"
+                className="bg-gradient-to-r from-rose-400 to-pink-400 hover:from-rose-500 hover:to-pink-500 text-white px-8 sm:px-12 py-4 sm:py-5 rounded-full text-lg sm:text-xl font-bold shadow-xl hover:shadow-2xl transition-all w-full sm:w-auto"
               >
                 Yes 😌
               </motion.button>
             </motion.div>
           </motion.div>
 
-          {/* Footer */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.7, duration: 0.6 }}
-            className="text-lg text-gray-600 italic"
+            className="text-base sm:text-lg text-gray-600 italic px-4"
           >
             Click either one... they both mean the same thing 💝
           </motion.p>
