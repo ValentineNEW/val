@@ -39,36 +39,33 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
       transition={{ duration: 0.5 }}
       className="min-h-screen bg-gradient-to-b from-white to-gray-50"
     >
-      {/* Header */}
       <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.5 }}
         className="border-b border-gray-200 bg-white"
       >
-        <div className="max-w-3xl mx-auto px-6 py-5">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
           <div className="flex items-center justify-between">
-            <h1 className="text-lg font-semibold text-gray-900">Application Form</h1>
-            <div className="flex items-center gap-2 text-sm text-gray-500">
-              <Lock className="w-4 h-4" />
+            <h1 className="text-base sm:text-lg font-semibold text-gray-900">Application Form</h1>
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-gray-500">
+              <Lock className="w-3 h-3 sm:w-4 sm:h-4" />
               <span>Secure</span>
             </div>
           </div>
         </div>
       </motion.header>
 
-      {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-6 py-12">
-        {/* Progress Indicator */}
+      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mb-8"
+          className="mb-6 sm:mb-8"
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-sm text-gray-600">Step 1 of 2</span>
-            <span className="text-sm text-gray-600">50% Complete</span>
+            <span className="text-xs sm:text-sm text-gray-600">Step 1 of 2</span>
+            <span className="text-xs sm:text-sm text-gray-600">50% Complete</span>
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <motion.div
@@ -80,25 +77,23 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
           </div>
         </motion.div>
 
-        {/* Form Card */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="bg-white rounded-2xl shadow-sm border border-gray-200 p-8"
+          className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 p-4 sm:p-6 lg:p-8"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center">
-              <FileText className="w-5 h-5 text-blue-600" />
+          <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+              <FileText className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
             </div>
             <div>
-              <h2 className="text-xl font-semibold text-gray-900">Personal Information</h2>
-              <p className="text-sm text-gray-500">Please provide your details for verification</p>
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900">Personal Information</h2>
+              <p className="text-xs sm:text-sm text-gray-500">Please provide your details for verification</p>
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Full Name */}
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -114,12 +109,11 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.fullName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                 placeholder="Enter your full name"
               />
             </motion.div>
 
-            {/* Email */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -135,12 +129,11 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                 placeholder="Enter your email"
               />
             </motion.div>
 
-            {/* School Name */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -156,12 +149,11 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.schoolName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                 placeholder="Enter your school name"
               />
             </motion.div>
 
-            {/* Graduating Year */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -176,7 +168,7 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.graduatingYear}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
               >
                 <option value="">Select graduating year</option>
                 <option value="2024">2024</option>
@@ -189,7 +181,6 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
               </select>
             </motion.div>
 
-            {/* Funding Reason */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -205,12 +196,11 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none text-sm sm:text-base"
                 placeholder="Please explain why you need funding and how it will help your education"
               />
             </motion.div>
 
-            {/* Funding Amount */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -225,7 +215,7 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.fundingAmount}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
               >
                 <option value="">Select amount ($500 - $5,000)</option>
                 <option value="$500">$500</option>
@@ -242,7 +232,6 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
               <p className="mt-1 text-xs text-gray-500">Select the funding amount that meets your needs</p>
             </motion.div>
 
-            {/* Bank Name */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -258,12 +247,11 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.bankName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                 placeholder="Enter your bank name"
               />
             </motion.div>
 
-            {/* Account Name */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -279,13 +267,12 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.accountName}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                 placeholder="Name on account"
               />
               <p className="mt-1 text-xs text-gray-500">This should match the name on your bank account</p>
             </motion.div>
 
-            {/* Account Number */}
             <motion.div
               initial={{ x: -20, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
@@ -301,23 +288,22 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
                 value={formData.accountNumber}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                className="w-full px-3 py-2 sm:px-4 sm:py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm sm:text-base"
                 placeholder="Enter account number"
               />
               <p className="mt-1 text-xs text-gray-500">Your information is encrypted and secure</p>
             </motion.div>
 
-            {/* Security Notice */}
             <motion.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 1.4, duration: 0.4 }}
-              className="bg-blue-50 border border-blue-200 rounded-lg p-4"
+              className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4"
             >
-              <div className="flex gap-3">
-                <Lock className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <div className="flex gap-2 sm:gap-3">
+                <Lock className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-sm font-medium text-blue-900 mb-1">Security & Privacy</p>
+                  <p className="text-xs sm:text-sm font-medium text-blue-900 mb-1">Security & Privacy</p>
                   <p className="text-xs text-blue-700">
                     All information is encrypted using bank-level security protocols. We never share your data with third parties.
                   </p>
@@ -325,7 +311,6 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
               </div>
             </motion.div>
 
-            {/* Submit Button */}
             <motion.button
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -333,19 +318,18 @@ export function ApplicationForm({ onNext }: ApplicationFormProps) {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="submit"
-              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-6 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all text-sm sm:text-base"
             >
               Continue Application
             </motion.button>
           </form>
         </motion.div>
 
-        {/* Trust Indicators */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.6, duration: 0.5 }}
-          className="mt-6 flex items-center justify-center gap-8 text-sm text-gray-500"
+          className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-xs sm:text-sm text-gray-500"
         >
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-green-500 rounded-full"></div>
